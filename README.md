@@ -1,7 +1,7 @@
 <h1 align="center">Functional_Genomic_Concentration</h1>
 
 <p align="center">
-  Comparative transcriptomic analysis of <i>Coffea arabica</i> cultivars Catuaí and CR95 in response to <i>Xylella fastidiosa</i> infection.
+  Transcriptomic and hypergeometric enrichment analysis of defense-related responses in Coffea arabica cultivars infected by Xylella fastidiosa
 </p>
 
 <p align="center">
