@@ -106,7 +106,7 @@ The analysis was run using:
 | `CR95_padj0.05_log2FC1.xlsx` | Step 8 — CR95 DEG input |
 | `Catuai_padj0.05_log2FC1.xlsx` | Step 8 — Catuaí DEG input |
 | `MEME.R` | Step 9 — Promoter motif discovery |
-| `Evidence_1_Report_Supplementary_material.pdf` | Step 6 — Full report incl. co-expression networks per cultivar |
+| `Evidence_1_Report_Supplementary_material.pdf` | Step 6 — co-expression networks per cultivar |
 
 ## Key results
 
