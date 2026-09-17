@@ -16,7 +16,7 @@
 
 ## About
 
-This repository contains the analysis pipeline used to study the differential transcriptional response of two coffee cultivars **Catuaí** and **CR95** to *Xylella fastidiosa* infection. The workflow covers RNA-seq preprocessing, differential expression analysis, functional enrichment, and regulatory motif discovery in promoter regions of candidate defense-related genes.
+This repository contains the analysis pipeline used to study the differential transcriptional response of two coffee cultivars Catuaí and CR95 to *Xylella fastidiosa* infection. The workflow covers RNA-seq preprocessing, differential expression analysis, functional enrichment, and regulatory motif discovery in promoter regions of candidate defense-related genes.
 
 **Dataset:** 15 RNA-seq samples
 - Catuaí: n = 8 (infected = 5, control = 3)
