@@ -113,4 +113,4 @@ The analysis was run using:
 - Catuaí: 741 DEGs (padj<0.05) → 38 after |log2FC|>1 filter (7 up / 31 down)
 - CR95: 363 DEGs (padj<0.05) → 225 after |log2FC|>1 filter (216 up / 9 down)
 - CR95 mounts a defense response centered on ethylene and fatty acid signaling; Catuaí shows a broader but low-magnitude, less specific transcriptional response
-- Motif analysis: top hits matched MYB-family TFs (MYB23, TCX3, ATMYB31) — no direct match to classical ethylene-pathway elements
+- Motif analysis: top hits matched MYB-family TFs (MYB23, TCX3, ATMYB31) with no direct match to classical ethylene-pathway elements
