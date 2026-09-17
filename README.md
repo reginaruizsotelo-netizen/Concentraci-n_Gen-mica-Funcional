@@ -43,59 +43,59 @@ The analysis was run using:
 ## Methodology
 
 ### 1. Quality control
-- **FastQC** v0.12.1 — pre- and post-trimming QC (Figures S1, S2)
+- FastQC v0.12.1 — pre- and post-trimming QC (Figures S1, S2)
 
 ### 2. Read trimming
-- **Trimmomatic** v0.39, paired-end mode (CaC10 processed single-end, missing forward read)
+- Trimmomatic v0.39, paired-end mode (CaC10 processed single-end, missing forward read)
   - `ILLUMINACLIP`: TruSeq3 adapter reference
   - `HEADCROP`: 15 bp
   - `TRAILING`: Q30
   - `SLIDINGWINDOW`: 4:30
 
 ### 3. Alignment
-- **HISAT2** v2.2.3 (splice-aware)
+- HISAT2 v2.2.3 (splice-aware)
   - Reference: *Coffea arabica* genome `GCF_036785885.1`
 
 ### 4. Read quantification
-- **featureCounts** v2.1.1
+- featureCounts v2.1.1
   - Input: HISAT2 BAM files + GTF/GFF annotation
 
 ### 5. Exploratory PCA
 📄 `Coffee_PCA.R`
 - Low-expression filter: counts-per-million (CPM)
-- Variance-stabilizing transformation (VST) — **DESeq2** v1.52.0
+- Variance-stabilizing transformation (VST) — DESeq2 v1.52.0
 - Guided design: model treatment separately per cultivar
 
 ### 6. Differential expression analysis (DEGs)
 📄 `DEGs_Heatmaps_Networks_Enrichment.R`
 📄 `Evidence_1_Report_Supplementary_material.pdf` — contains gene co-expression networks per cultivar (Pearson correlation, threshold > 0.8), showing distinct topological patterns between Catuaí (downregulation-dominated) and CR95 (upregulation-dominated)
-- **DESeq2** v1.52.0, run independently per cultivar
-- Low-expression filter: `filterByExpr` — **edgeR** v4.10.5
+- DESeq2 v1.52.0, run independently per cultivar
+- Low-expression filter: `filterByExpr` — edgeR v4.10.5
 - Design: `~ treatment`
-- Shrunken log2FC: **ashr** method
+- Shrunken log2FC: ashr method
 - DEG criteria (both required): `padj` (FDR) < 0.05 and `|log2FC|` > 1
 
 ### 7. GO enrichment — competitive test
 📄 `DEGs_Heatmaps_Networks_Enrichment.R`
-- **CAMERA** function — **limma** v3.68.5
+- CAMERA function — limma v3.68.5
 - FDR < 0.05
 - Minimum 5 genes per term
 
 ### 8. GO enrichment — hypergeometric test
 📄 `DEGs_Heatmaps_Networks_Enrichment.R`
 📄 `CR95_padj0.05_log2FC1.xlsx`, `Catuai_padj0.05_log2FC1.xlsx` — filtered DEG lists used as input
-- **clusterProfiler** v4.20.0, `enricher` function
+- clusterProfiler v4.20.0, `enricher` function
 - Run separately for upregulated and downregulated genes per cultivar
 - Thresholds: `|log2FC|` > 1, `padj` < 0.05
 
 ### 9. Regulatory motif analysis
 📄 `MEME.R`
 - 8 candidate genes (ethylene-pathway related, CR95 upregulated)
-- Coordinates extracted with **rtracklayer** v1.72.0 (`GCF_036785885.1` annotation)
-- Promoter region: **-1000 bp / +200 bp** relative to TSS (strand-aware)
-- Sequence extraction: **Rsamtools** v2.28.0 + **Biostrings** v2.80.2
-- Motif discovery: **MEME** v5.5.9 (via **memes** v1.20.0), width 6–15 bp, max 3 motifs
-- Motif comparison: **TomTom** vs. JASPAR Plants database
+- Coordinates extracted with rtracklayer v1.72.0 (`GCF_036785885.1` annotation)
+- Promoter region: -1000 bp / +200 bp relative to TSS (strand-aware)
+- Sequence extraction: Rsamtools v2.28.0 and Biostrings v2.80.2
+- Motif discovery: MEME v5.5.9 (via memes v1.20.0), width 6–15 bp, max 3 motifs
+- Motif comparison: TomTom vs. JASPAR Plants database
 
 ## Files in this repository
 
