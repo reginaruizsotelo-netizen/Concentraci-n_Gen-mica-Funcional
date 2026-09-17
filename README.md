@@ -26,7 +26,7 @@ This repository contains the analysis pipeline used to study the differential tr
 
 The analysis was run using:
 
-- R 4.x
+- R 4.6.1
 - DESeq2 v1.52.0
 - edgeR v4.10.5
 - limma v3.68.5
